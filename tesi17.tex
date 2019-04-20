@@ -1,0 +1,217 @@
+\documentclass[a4paper,10pt]{article}
+
+%\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc} %non gli piace
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}	
+\usepackage{bm}
+%\usepackage{babel}
+\usepackage{fontenc}
+\usepackage{graphicx}
+
+\usepackage[dvips]{hyperref}
+
+\date{11/4/2019}
+
+\begin{document}
+ \section*{Chapter 2}
+ In this chapter symmetries and action principles will be analyzed by treating them with classical field theory.
+ \section*{Lagrangian function in Classical Field Theory}
+ In classical mechanics, a system can be described by a function of space-time coordinates, and their time derivatives, the Lagrangian.
+ This function gives information about the dynamics of the system.\\
+ The same appends in field theory.\\
+ Let's consider a system of many fields $\phi^i$ in an n-dimensional Minkowsky spae-time.\\
+ The dynamics of this system can still be described with Lagrangian formalism but it need to be generalized.
+ To do so, we must introduce the concept of Lagrangian Density, which is defined as:
+ \begin{equation}
+  L=\int{d^{n-1}x\;\mathcal{L} }
+ \end{equation}
+ Where L is the total Lagrangian fuction and 
+ \begin{equation}
+  \mathcal{L}= \mathcal{L} \left(\phi^i(x^\mu),\frac{\partial\phi_i}{\partial x^\mu} \right)
+ \end{equation}
+ is the Lagrangian density,which depends on the fields and their derivatives.\\
+ Like in the classical case, the equation of motion can be found by minimizing the variation of the action which is now defined as:
+ \begin{equation}
+  \mathcal{S}=\int{dx^0\;L } = \int{d^nx\;\mathcal{L} }
+ \end{equation}
+ \\
+ \\
+ \section*{Symmetries}
+ Consider a set of fields $\phi^i(x)$ which satisfy the equation of motion.
+ A general symmetry of the system is a mapping of the configuration space, $\phi^i(x)\rightarrow\phi^{'i}(x)$,
+ with the property that if the original field configuration $\phi^i(x)$ is a solution of the equations
+ of motion, then also the transformed configuration $\phi^{'i}(x)$ is. 
+ For scalar fields and more other systems, we can restrict attention to those symmetries that leave the action invariant.\\
+ Thus we require that the transformation has the following property:
+ \begin{equation}
+  S(\phi^i)=S(\phi^{'i})
+ \end{equation}
+ There are two main types of symmetries: spacetime symmetries, which involve a motion in the spacetime, and internal symmetries, which do not.
+ \section{Internal Symmetries}
+ Considering a linearly realized internal symmetry under an arbitrary connected Lie group G, we can see a general element of the algebra as a matrix $\Theta$ which is a superposition of the genertors $t_A$ and real parameters $\theta^A$
+ \begin{equation}
+  \Theta= t^A\theta_A
+ \end{equation}
+  So an element of the group is represented by the matrix exponential
+  \begin{equation}
+   U\left(\varTheta \right) = e^{-\varTheta} = e^{-t^A\theta_A}
+  \end{equation}
+ This kind of transformation acts by matrix multiplication on the field
+ \begin{equation}
+  \phi^i(x) \rightarrow \phi^{'i}(x) = U\left(\varTheta \right)^i_j \phi^j(x)
+ \end{equation}
+ To obtain the field variation we shall focus on infinitesimal transformations that are defined as the truncation of the power series of the group's element U($\Theta$) at the first order in $\Theta$.\\
+ Thus we have:
+ \begin{equation}
+  \delta\phi=-\Theta\phi
+ \end{equation}
+As we can see, an internal symmetry is a trasformation which acts only on the field, leaving the spacetime points invariant.
+An example of this kind of symmetry is the SO(n) one.
+
+
+\section{Spacetime Symmetries}
+The aim of this section is to analyze spacetime symmetries and how they act on fields.
+To do so, we will consider an example which is very importan in General Relativity:
+The Lorentz and Poincaré symmetry.\\
+In an n-dimensional flat spacetime, the Lorentz group is defined as the group of homogeneus linear transformations of coordinates:
+\begin{equation}
+ x^{\mu} = \Lambda^\mu_\nu x^{'\nu}
+\end{equation}
+This transformations preserve the Minkowski norm, so we require the property:
+\begin{equation}
+ x^\mu\eta_{\mu\nu}x^\nu=x^{'\mu}\eta_{\mu\nu}x^{'\nu}
+\end{equation}
+The Poincaré group is the Lorentz group plus a global translation, so that we obtain:
+\begin{equation}
+ x^{'\mu}=\Lambda^{-1\mu}_\nu(x^{\nu}-a^{\nu})
+\end{equation}
+The property of norm preservation leads to the defining property of the $\Lambda$ matrices:
+\begin{equation}
+ \Lambda^\mu_\rho\eta_{\mu\nu}\Lambda^{\nu}_\sigma=\eta_{\rho\sigma}
+\end{equation}
+The action of these matrices on a scalar field $\phi^i(x)$ is
+\begin{equation}
+ \phi^i(x)\rightarrow \phi^{'i}(x)= \phi^i(\Lambda x)
+\end{equation}
+It is usefull to analyze an infinitesimal transformation. To do so, we shall introduce differential operators that implement the coordinate change in the $[\alpha\beta]$ 2-plane. 
+\begin{equation}
+ L_{[\alpha\beta]}= x_\alpha \partial_\beta - x_\beta \partial_\alpha
+\end{equation}
+Thus we have a realization of the Lie algebra of the Lorentz group acting as differential operators on functions.\\
+An element of the group can be seen as the operator
+\begin{equation}
+ U(\Lambda)=e^{-\frac{1}{2} \lambda^{\alpha\beta}L_{[\alpha\beta]}}
+\end{equation}
+The action of finite Lorentz transformations on scalar fields can be written in fuction of this operator
+\begin{equation}
+ \phi^i(x)\rightarrow\phi^{'i}(x) = U(\Lambda)\phi^i(x) = \phi^i(\Lambda x)
+\end{equation}
+In the end we see that both Lorentz and internal symmetries are implemented by linear operators acting on the classical fields, a differential operator for Lorentz and a matrix
+operator for internal and both operators depend on group parameters in the same way.\\
+Now, we want to study the Poincaré transformations, which are given by the Lorentz's ones plus a spacetime translation, defined as
+\begin{equation}
+ \phi^i(x)\rightarrow\phi^{'i}(x)= \phi^i(x+a) = U(a) \phi^i(x)
+\end{equation}
+Thus we have
+\begin{equation}
+ U(a)=e^{a^\mu P_\mu}
+\end{equation}
+Where 
+\begin{equation}
+ P_\mu= \partial_\mu= \frac{\partial}{\partial x_\mu}
+\end{equation}
+So, the finite transformations of the Poincaré group are implemented by the operator 
+ $U(a,\Lambda)=U(a)U(\Lambda)$
+that acts in the following way on the fields
+\begin{equation}
+ \phi^i(x)\rightarrow\phi^{'i}(x)=U(a,\Lambda) \phi^i(x) =\phi^i(\Lambda x +a)
+\end{equation}
+
+
+
+\section*{Noether's Theorem}
+In this section we want to analyze, using the Noether's Theorems, the relation between global symmetries and conserved charges. We also want to define the canonical energy-momentum tensor as the conserved Noether current associated with the invariance of the action under certain spacetime transformations.\\
+Let's consider a generic field $\phi(x)$ and its action $ S(\phi)$ which is defined as
+\begin{equation}
+ S(\phi)=\int { d^dx\; \mathcal{L} \left( \phi, \partial_\mu \phi \right)}
+\end{equation}
+To find the equation of motion we should minimize the action, thus, under infinitesimal variations of the field $\delta \phi$ we obtain
+\begin{equation}
+ \delta S = \int{ d^dx\;\delta \mathcal{L}}= \int{ d^dx\;( \frac{\partial \mathcal{L}}{\partial \phi} \delta \phi + \frac{\partial \mathcal{L}}{\partial \partial_\mu \phi} \delta \partial_\mu \phi)}
+\end{equation}
+So, to obtain the least action we require that $\delta S =0$. This lead us to the Euler-Lagrange equations of motion
+\begin{equation}
+ \frac{\partial \mathcal{L}}{\partial \phi}\;-\partial_\mu \left(\frac{\partial \mathcal{L}}{\partial \partial_\mu \phi}\right)=0
+\end{equation}
+If we now consider a generic infinitesimal symmetry variation of the field, defined as
+\begin{equation}
+ \delta \phi(x)= \varsigma^A \; \Delta_A \phi(x)
+\end{equation}
+where we assume that $\varsigma^A$ are constant parameters.\\
+As a symmetry, this transformation leaves the action invariant, thus the variation of the Lagrangian density must be a total derivative $ \delta \mathcal{L}= \varsigma^A \partial_\mu K^\mu_A$.\\
+The variation of the Lagrangian density in detail is
+\begin{equation}
+ \delta \mathcal{L}= \, \varsigma^A \left(\frac{\partial \mathcal{L}}{\partial \phi}\Delta_A\phi +\frac{\partial \mathcal{L}}{\partial \partial_\mu \phi}\partial_\mu \Delta_A \phi \right)= \varsigma^A \partial_\mu K^\mu_A
+\end{equation}
+Using the Euler-Lagrange equations, we can rewrite this variation as
+\begin{equation}
+ \partial_\mu J^\mu_A=0
+\end{equation}
+Which holds for all the solutions of the equations of motion.
+This means that $J^\mu_A$ is the associated conserved Noether current, thus we have:
+\begin{equation}
+ J^\mu_A=\,-\frac{\partial \mathcal{L}}{\partial \partial_\mu \phi} \Delta_A\phi \, +\, K^\mu_A
+\end{equation}
+By considering $\varsigma^A$ as varying parameters $\varsigma^A(x)$ we obtain
+\begin{equation}
+\begin{split}
+  &\delta S= \int{ d^dx \,\left[ \frac{\partial \mathcal{L}}{\partial \phi}\,\varsigma^A \Delta_A\phi + \frac{\partial \mathcal{L}}{\partial \partial_\mu \phi}\partial_\mu(\varsigma^A \Delta_A\phi)\right]}\\
+  &=\, \int{ d^dx \,\left[\varsigma^A \partial_\mu K^\mu_A+\,(\partial_\mu\varsigma^A) \frac{\partial \mathcal{L}}{\partial \partial_\mu \phi} \Delta_A \phi \right]}\\
+  &=\, -\int{d^dx\,(\partial_\mu\varsigma^A)\,J^\mu_A}
+\end{split}                        
+\end{equation}
+For each Noether current one can define an integrated conserved charge, which is a constant of motion, by taking the integral of the time component of the current $J^0_A$ over a family of constant time surfaces that are foliating our flat spacetime.\\
+Thus we have
+\begin{equation}
+ Q_A=\,\int{d^{(d-1)}x\,J^0_A(\overrightarrow{x},t)}
+\end{equation}
+To see which charge is associated to internal and spacetime transformations, one can take as an example a massless real scalar field. The lagrangian density and equation of motion are
+\begin{equation}
+ \begin{split}
+  &\mathcal{L}(\phi)=\frac{1}{2}\,\partial_\mu \phi\, \partial^\mu \phi\\
+  &\partial^2 \phi=0
+ \end {split}
+\end{equation}
+For internal symmetry,where $\delta\phi=\,t^a\theta_A\phi$, we have
+\begin{equation}
+ J^\mu_A=\,-\partial^\mu\phi\,t^A\phi
+\end{equation}
+While for spacetime translations, the index A of the current is replaced by a vector $\nu$ and the conserved current is the canonical energy-momentum tensor
+\begin{equation}
+ T^\mu_\nu=\, \partial^\mu\phi\,\partial_\nu\phi\,+\,\delta^\mu_\nu\mathcal{L}
+\end{equation}
+By adding Lorentz transformations, the index A becomes an antisymmetric pair $\rho\sigma$
+and $J^\mu_A$ becomes
+\begin{equation}
+ M^\mu_{[\rho \sigma]}=-x_\rho T^\mu_\sigma \, + \, x_\sigma T^\mu_\rho
+\end{equation}
+Thus the conserved charges for those symmetry, called $T_A$ for the internal one, $P_\mu$ for translations and $M_{[\rho \sigma]}$ for Lorentz translations are
+\begin{equation}
+ \begin{split}
+  &T_A=\int{d^{(d-1)}\overrightarrow{x}\,J^0_A},\\
+  &P_\mu=\int{d^{(d-1)}\overrightarrow{x}\,T^0_\mu},\\
+  &M_{[\rho \sigma]}=\int{d^{[d-1]}\overrightarrow{x}\,M^0_{[\rho \sigma]}}
+ \end{split}
+\end{equation}
+In general the symmetry currents obtained by the Noether procedure are not unique.
+In fact they can be modified by adding terma like $\Delta\,J^\mu_a$ which are identically conserved.
+Neither Noether charges are changed by the added term since $\Delta\,J^0_A$ involves total spatial derivatives.
+
+
+
+
+
+\end{document}
