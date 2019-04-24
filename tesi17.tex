@@ -18,10 +18,10 @@
 \begin{document}
  \section*{Chapter 2}
  In this chapter symmetries and action principles will be analyzed by treating them with classical field theory.
- \section*{Lagrangian function in Classical Field Theory}
+ \section{Lagrangian function in Classical Field Theory}
  In classical mechanics, a system can be described by a function of space-time coordinates, and their time derivatives, the Lagrangian.
  This function gives information about the dynamics of the system.\\
- The same appends in field theory.\\
+ The same happens in field theory.\\
  Let's consider a system of many fields $\phi^i$ in an n-dimensional Minkowsky spae-time.\\
  The dynamics of this system can still be described with Lagrangian formalism but it need to be generalized.
  To do so, we must introduce the concept of Lagrangian Density, which is defined as:
@@ -39,7 +39,7 @@
  \end{equation}
  \\
  \\
- \section*{Symmetries}
+ \section{Symmetries}
  Consider a set of fields $\phi^i(x)$ which satisfy the equation of motion.
  A general symmetry of the system is a mapping of the configuration space, $\phi^i(x)\rightarrow\phi^{'i}(x)$,
  with the property that if the original field configuration $\phi^i(x)$ is a solution of the equations
@@ -50,14 +50,14 @@
   S(\phi^i)=S(\phi^{'i})
  \end{equation}
  There are two main types of symmetries: spacetime symmetries, which involve a motion in the spacetime, and internal symmetries, which do not.
- \section{Internal Symmetries}
- Considering a linearly realized internal symmetry under an arbitrary connected Lie group G, we can see a general element of the algebra as a matrix $\Theta$ which is a superposition of the genertors $t_A$ and real parameters $\theta^A$
+ \subsection{Internal Symmetries}
+ Considering a linearly realized internal symmetry under an arbitrary connected Lie group G, we can see a general element of the algebra as a matrix $\Theta$ which is a superposition of the generators $t_A$ and real parameters $\theta^A$
  \begin{equation}
-  \Theta= t^A\theta_A
+  \Theta= t_A\theta^A
  \end{equation}
-  So an element of the group is represented by the matrix exponential
+  So an element of the group is represented by the operator
   \begin{equation}
-   U\left(\varTheta \right) = e^{-\varTheta} = e^{-t^A\theta_A}
+   U\left(\varTheta \right) = e^{-\varTheta} = e^{-t_A\theta^A}
   \end{equation}
  This kind of transformation acts by matrix multiplication on the field
  \begin{equation}
@@ -72,7 +72,7 @@ As we can see, an internal symmetry is a trasformation which acts only on the fi
 An example of this kind of symmetry is the SO(n) one.
 
 
-\section{Spacetime Symmetries}
+\subsection{Spacetime Symmetries}
 The aim of this section is to analyze spacetime symmetries and how they act on fields.
 To do so, we will consider an example which is very importan in General Relativity:
 The Lorentz and Poincaré symmetry.\\
@@ -86,7 +86,7 @@ This transformations preserve the Minkowski norm, so we require the property:
 \end{equation}
 The Poincaré group is the Lorentz group plus a global translation, so that we obtain:
 \begin{equation}
- x^{'\mu}=\Lambda^{-1\mu}_\nu(x^{\nu}-a^{\nu})
+ x^{'\mu}=\left(\Lambda^{-1}\right)^{\mu}_\nu(x^{\nu}-a^{\nu})
 \end{equation}
 The property of norm preservation leads to the defining property of the $\Lambda$ matrices:
 \begin{equation}
@@ -105,12 +105,12 @@ An element of the group can be seen as the operator
 \begin{equation}
  U(\Lambda)=e^{-\frac{1}{2} \lambda^{\alpha\beta}L_{[\alpha\beta]}}
 \end{equation}
-The action of finite Lorentz transformations on scalar fields can be written in fuction of this operator
+The action of finite Lorentz transformations on scalar fields can be written in fuction of this one
 \begin{equation}
  \phi^i(x)\rightarrow\phi^{'i}(x) = U(\Lambda)\phi^i(x) = \phi^i(\Lambda x)
 \end{equation}
-In the end we see that both Lorentz and internal symmetries are implemented by linear operators acting on the classical fields, a differential operator for Lorentz and a matrix
-operator for internal and both operators depend on group parameters in the same way.\\
+In the end we see that both Lorentz and internal symmetries are implemented by linear operators acting on the classical fields: a differential operator for the former and a matrix
+operator for the latter. Both operators depend on group parameters in the same way.\\
 Now, we want to study the Poincaré transformations, which are given by the Lorentz's ones plus a spacetime translation, defined as
 \begin{equation}
  \phi^i(x)\rightarrow\phi^{'i}(x)= \phi^i(x+a) = U(a) \phi^i(x)
@@ -132,7 +132,7 @@ that acts in the following way on the fields
 
 
 
-\section*{Noether's Theorem}
+\section{Noether's Theorem}
 In this section we want to analyze, using the Noether's Theorems, the relation between global symmetries and conserved charges. We also want to define the canonical energy-momentum tensor as the conserved Noether current associated with the invariance of the action under certain spacetime transformations.\\
 Let's consider a generic field $\phi(x)$ and its action $ S(\phi)$ which is defined as
 \begin{equation}
@@ -151,8 +151,7 @@ If we now consider a generic infinitesimal symmetry variation of the field, defi
  \delta \phi(x)= \varsigma^A \; \Delta_A \phi(x)
 \end{equation}
 where we assume that $\varsigma^A$ are constant parameters.\\
-As a symmetry, this transformation leaves the action invariant, thus the variation of the Lagrangian density must be a total derivative $ \delta \mathcal{L}= \varsigma^A \partial_\mu K^\mu_A$.\\
-The variation of the Lagrangian density in detail is
+As a symmetry, this transformation leaves the action invariant, thus the variation of the Lagrangian density must be a total derivative
 \begin{equation}
  \delta \mathcal{L}= \, \varsigma^A \left(\frac{\partial \mathcal{L}}{\partial \phi}\Delta_A\phi +\frac{\partial \mathcal{L}}{\partial \partial_\mu \phi}\partial_\mu \Delta_A \phi \right)= \varsigma^A \partial_\mu K^\mu_A
 \end{equation}
@@ -173,7 +172,7 @@ By considering $\varsigma^A$ as varying parameters $\varsigma^A(x)$ we obtain
   &=\, -\int{d^dx\,(\partial_\mu\varsigma^A)\,J^\mu_A}
 \end{split}                        
 \end{equation}
-For each Noether current one can define an integrated conserved charge, which is a constant of motion, by taking the integral of the time component of the current $J^0_A$ over a family of constant time surfaces that are foliating our flat spacetime.\\
+For each Noether current one can define a conserved charge, which is a constant of motion, by taking the integral of the time component of the current $J^0_A$ over a family of constant time surfaces that are foliating our flat spacetime.\\
 Thus we have
 \begin{equation}
  Q_A=\,\int{d^{(d-1)}x\,J^0_A(\overrightarrow{x},t)}
@@ -185,7 +184,7 @@ To see which charge is associated to internal and spacetime transformations, one
   &\partial^2 \phi=0
  \end {split}
 \end{equation}
-For internal symmetry,where $\delta\phi=\,t^a\theta_A\phi$, we have
+For internal symmetry,where $\delta\phi=\,t^A\theta_A\phi$, we have
 \begin{equation}
  J^\mu_A=\,-\partial^\mu\phi\,t^A\phi
 \end{equation}
@@ -207,8 +206,71 @@ Thus the conserved charges for those symmetry, called $T_A$ for the internal one
  \end{align}
 \end{equation}
 In general the symmetry currents obtained by the Noether procedure are not unique.
-In fact they can be modified by adding terma like $\Delta\,J^\mu_a$ which are identically conserved.
-Neither Noether charges are changed by the added term since $\Delta\,J^0_A$ involves total spatial derivatives.
+In fact they can be modified by adding terms like $\Delta\,J^\mu_a$ which are identically conserved.
+Neither Noether charges are changed by the added terms since $\Delta\,J^0_A$ involves total spatial derivatives.
+
+
+\section{Action Principles}
+A minimal action principle is a fundamental ingredient for any field thoery since it allows us to find both conserved currentes and charges. Moreover it is easier to deal with actions than with eqautions of  motion, it is simpler indeed to include new fiels and couplings in the action respecting certain symmetries than to invent new equations of motion.\\
+Thus, in this section we are going to study some action principles for two well know fields: a massive scalar field and the electromagnetic one.\\
+\subsection{Scalar Massive Field}
+Let's start by considering a scalar massive field $\phi$ in a 4-dimensional Minkowski spacetime. The action is defined as
+\begin{equation}
+ S=\,- \frac{1}{2}\int{d^4x\,\left(\eta_{\mu\nu} \partial^\mu \phi \partial^\nu \phi+\,m^2 \phi^2 \right)}
+\end{equation}
+To obtain the Klein-Gordon equations one should minimize the variation of the latter. Thus we require that
+$\frac{\delta S}{\delta \phi}=0 $.
+In detail we have
+\begin{equation}
+ \begin{align}
+ & \delta S= -\frac{1}{2} \int{d^4x\,\delta \left(\eta_{\mu\nu} \partial^\mu \phi \partial^\nu \phi+\,m^2 \phi^2 \right)}\\
+            &=\,-\int{ d^4x\, \left(\partial_\mu \phi \partial^\mu( \delta \phi) + m^2 \phi \delta \phi\right)}\\
+            &=\, -\int{d^4x\, \partial^\mu( \partial_\mu \phi \delta \phi)} + \int{ d^4x\, \left( \partial^\mu ( \partial_mu \phi) - m^2 \phi \delta \phi \right)}=0
+ \end{align}
+\end{equation}
+The first integral does not contribute and we obtain
+\begin{equation}
+ \partial^\mu(\partial_\mu \phi)\,-m^2 \phi=0
+\end{equation}
+
+\subsection{Electromagnetic Field}
+The Lagrangian density for the electromagnetic field in four dimensional flat spacetime is
+\begin{equation}
+ \mathcal{L}=-\frac{1}{4} \left( \eta^{\mu \alpha} \eta^{\nu \beta} F_{\mu \nu} F_{\alpha \beta} \right)
+\end{equation}
+Moreover the Faraday tensor $ F_{\alpha \beta}$ can be seen as
+\begin{equation}
+ F_{\alpha \beta} = \partial_\alpha A_\beta - \partial_\beta A_\alpha
+\end{equation}
+where A is the four-potential.\\
+By minimizing the variation of the action we have
+\begin{equation}
+ \begin{align}
+  &\delta S= \int{d^4x\, -\frac{1}{4} \delta \left( \partial_\mu A_\nu \partial_\alpha A_\beta \eta^{\mu \alpha} \eta^{\nu \beta}- \partial_\nu A_\mu \partial_\alpha A_\beta \eta^{\mu \alpha} \eta^{\nu \beta}+ \partial_\nu A_\mu \partial_\beta A_\alpha \eta^{\mu \alpha} \eta^{\nu \beta}- \partial_\mu A_\nu \partial_\beta A_\alpha \eta^{\mu \alpha} \eta^{\nu \beta} \right)}\\
+  &=\int{d^4x\, -\frac{1}{2} \delta \left( \partial_\mu A_\nu \partial_\alpha A_\beta \eta^{\mu \alpha} \eta^{\nu \beta} - \partial_\mu A_\nu \partial_\beta A_\alpha \eta^{\mu \alpha} \eta^{\nu \beta} \right)}\\
+  &=\int{d^4x\, -\frac{1}{2} \left(\partial_\mu \delta A_\nu \partial_\alpha A_\beta \eta^{\mu \alpha} \eta^{\nu \beta} - \partial_\mu A_\nu \partial_\alpha \delta A_\beta \eta^{\mu \alpha} \eta^{\nu \beta}-\partial_\mu \delta A_\nu \partial_\beta A_\alpha \eta^{\mu \alpha} \eta^{\nu \beta} + \partial_\mu A_\nu \partial_\beta \delta A_\alpha \eta^{\mu \alpha} \eta^{\nu \beta} \right)}
+ \end{align}
+\end{equation}
+With an appropriate change in the names of the indices and considering that
+\begin{equation}
+ \partial_\mu \delta A_\nu \partial_\alpha A_\beta \eta^{\mu \alpha} \eta^{\nu \beta} = \partial_\mu (\delta A_\nu \partial_\alpha A_\beta \eta^{\mu \alpha} \eta^{\nu \beta}) - \delta A_\nu \partial_\mu (\partial_\alpha A_\beta \eta^{\mu \alpha} \eta^{\nu \beta})
+\end{equation}
+one can write
+\begin{equation}
+  \delta S= \int{d^4x\, -\frac{1}{2} \left[\delta A_\nu \partial_\mu( \partial_\beta A_\alpha \eta^{\mu \alpha} \eta^{\nu \beta})- \delta A_\nu \partial_\mu ( \partial_\alpha A_\beta \eta^{\mu \alpha} \eta^{\nu \beta}) \right]}=0
+\end{equation}
+Thus we obtain the homogeneus Maxwell equations
+\begin{equation}
+ \eta^{\mu \alpha} \eta^{\nu \beta} \partial_\mu(\partial_\alpha A_\beta - \partial_\beta A_\alpha)=0
+\end{equation}
+Which can be rewritten in a covariant form
+\begin{equation}
+ \nabla_\mu F_{\mu \nu}=0
+\end{equation}
+
+
+
+
 
 
 
